@@ -61,7 +61,7 @@ export default function Order() {
           <div key={i.id}>
           <div className='bg-black p-2 flex gap-3'>
             <div className=' bg-white max-w-36 md:w-1/3 p-2 flex items-center '>
-              <img className="" src={`http://localhost:4000/${i.image}`} alt="" />
+              <img className="" src={`${import.meta.env.VITE_API_URL}/${i.image}`} alt="" />
             </div>
             <div className=' w-auto '>
               <p className=' text-white  text-xs'>ID: {i.id}</p>

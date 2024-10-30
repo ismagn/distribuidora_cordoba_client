@@ -17,7 +17,7 @@ export default function Header() {
 
   return (
     <div className="bg-black text-center">
-        <img src="../public/img/banner-distribuidora.jpg" className=" w-full h-full bg-white p-5" alt="" />
+        <img src="img/banner-distribuidora.jpg" className=" w-full h-full bg-white p-5" alt="" />
         
         <nav className=" hidden text-white relative md:flex justify-around  m-auto p-5 items-center">
           <Link to={'/'}>HOME</Link>

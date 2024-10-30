@@ -88,7 +88,7 @@ export default function Products() {
                 {filter?.map(i=> (
                     <div key={i.id} className=" border-2 bg-slate-100 p-1 flex flex-col justify-between">
                         {i.image ? (
-                            <img className="w-full min-h-32 max-h-40 md:max-h-40 md:min-h-40" src={`http://localhost:4000/${i.image}`} alt="" />
+                            <img className="w-full min-h-32 max-h-40 md:max-h-40 md:min-h-40" src={`${import.meta.env.VITE_API_URL}/${i.image}`} alt="" />
                         ) : (
                             <p className=" bg-gray-700 min-h-32 md:min-h-40">p</p>
                         )}
@@ -154,7 +154,7 @@ export default function Products() {
                                     <p>{i.category?.name}</p>
                                 </td>
                                 <td className="p-3 lg:text-lg max-w-20 text-gray-800  border hidden lg:visible">
-                                {i.image && <img className="   max-h-10" src={`http://localhost:4000/${i.image}`} alt="" />}
+                                {i.image && <img className="   max-h-10" src={`${import.meta.env.VITE_API_URL}/${i.image}`} alt="" />}
                                 </td>
                                 {user?.admin ? (
                                 <td className="p-3 text-xs text-gray-800 flex flex-col gap-2">

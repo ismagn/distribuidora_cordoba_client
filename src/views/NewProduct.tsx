@@ -186,7 +186,7 @@ export default function NewProduct() {
                     />
                 </div>
                 <div >
-                    {!prev && product.image && <img className="w-2/4 h-1/4" src={`http://localhost:4000/${product.image}`} alt="" />}
+                    {!prev && product.image && <img className="w-2/4 h-1/4" src={`${import.meta.env.VITE_API_URL}/${product.image}`} alt="" />}
                 </div>
                 <div >
                     {prev && <img className="w-2/4 h-1/4" src={`${prev}`} alt="" />}

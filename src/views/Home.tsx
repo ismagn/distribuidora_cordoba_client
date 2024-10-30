@@ -23,14 +23,14 @@ function Home() {
         <p className=" md:text-2xl text-white font-bold">Somos distribuidor autorizado de las mejores marcas</p>
       </section>
       <section className="  grid grid-cols-4 p-4 gap-1 md:gap-10 my-5 items-center bg-white shadow-xl mx-2">
-          <img src="../public/img/marcas/3m.jpg" alt="" />
-          <img src="../public/img/marcas/condulac.png" alt="" />
-          <img src="../public/img/marcas/condumex.jpg" alt="" />
-          <img src="../public/img/marcas/fierro.jpg" alt="" />
-          <img src="../public/img/marcas/poliflex.png" alt="" />
-          <img src="../public/img/marcas/tecnolite.png" alt="" />
-          <img src="../public/img/marcas/viakon.jpg" alt="" />
-          <img src="../public/img/marcas/volteck.png" alt="" />
+          <img src="img/marcas/3m.jpg" alt="" />
+          <img src="img/marcas/condulac.png" alt="" />
+          <img src="img/marcas/condumex.jpg" alt="" />
+          <img src="img/marcas/fierro.jpg" alt="" />
+          <img src="img/marcas/poliflex.png" alt="" />
+          <img src="img/marcas/tecnolite.png" alt="" />
+          <img src="img/marcas/viakon.jpg" alt="" />
+          <img src="img/marcas/volteck.png" alt="" />
       </section>
     </div>
   )
