@@ -9,7 +9,7 @@ export default function Orders() {
 
   return (
     
-    <div className=" h-screen">
+    <div className=" ">
         <Outlet/>
     </div>
   )

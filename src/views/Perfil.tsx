@@ -3,6 +3,7 @@ import useProductos from "../hooks/useProductos"
 import { useServices } from "../hooks/useServices";
 import { ContextProps, draftUser } from "../types"
 import { useAuth } from "../hooks/useAuth";
+import { Fade,Slide } from "react-awesome-reveal";
 
 export default function Perfil() {
 
@@ -66,6 +67,7 @@ export default function Perfil() {
  
 
   return (
+    <Fade>
     <div className={`${user?.admin ? 'grid-cols-1' : 'md:grid-cols-2'} grid  gap-3  `}>
         
         <div className="perfil-container bg-slate-100 shadow-lg border-4 md:h-screen p-2">
@@ -184,6 +186,7 @@ export default function Perfil() {
                     <h2 className=" bg-yellow-300 p-1 font-bold">En progreso</h2>
 
                     {progressOrders.map(i => (
+                        <Slide triggerOnce direction="right">
                         <div key={i.id} className=" bg-yellow-100 p-2 mt-2">
                             <div className=" flex justify-between items-center">
                                 <div className="">
@@ -201,6 +204,7 @@ export default function Perfil() {
                                 </div>
                             ))}
                         </div>
+                        </Slide>
                     ))}
                 </div>
                 <div className=" min-h-40 ">
@@ -208,6 +212,7 @@ export default function Perfil() {
                     <h2 className=" bg-green-400 p-1 font-bold">Completados</h2>
 
                     {completeOrders.map(i => (
+                        <Slide triggerOnce direction="right">
                         <div key={i.id} className=" bg-green-200 p-2 mt-2">
                             <div className=" flex justify-between items-center">
                                 <div className="">
@@ -225,10 +230,12 @@ export default function Perfil() {
                                 </div>
                             ))}
                         </div>
+                        </Slide>
                     ))}
                 </div>
             </div>
         </div>
     </div>
+    </Fade>
   )
 }

@@ -3,6 +3,7 @@ import { Link} from "react-router-dom"
 import { ContextProps, DraftCategory } from "../types"
 import { useServices } from "../hooks/useServices"
 import useProductos from "../hooks/useProductos"
+import { Fade,Slide } from "react-awesome-reveal";
 
 export default function NewCategory() {
 
@@ -49,19 +50,22 @@ export default function NewCategory() {
 
 
   return (
+    <Fade>
     <div className="p-10">
         <div className="text-center">
-            <Link to={'/products'} className="p-3 bg-indigo-600 text-white font-bold rounded-md uppercase">Volver a productos</Link>
+            <Link to={'/products'} className="p-3 bg-black text-white font-bold rounded-md uppercase">Volver a productos</Link>
         </div>
-        <div className="bg-blue-200 my-14 w-1/3 mx-auto p-2 rounded-md">
+        <div className="bg-slate-200 my-14 w-2/3 mx-auto p-2 rounded-md">
             <h2 className=" font-bold text-xl text-center mb-3">Categorias Actuales</h2>
             {categorias?.map(i=> (
                 <div key={i.id} className=" flex items-center border rounded-md border-black my-2 justify-between">
+                    <Slide cascade >
                     <p className=" uppercase font-bold ">- {i.name}</p>
                     <button 
                     className=" text-white p-2 text-xs bg-red-700 rounded-md"
                     onClick={()=>deleteCategory(+i.id)}
                     >ELIMINAR</button>
+                    </Slide>
                 </div>
             ))}
         </div>
@@ -88,7 +92,7 @@ export default function NewCategory() {
                     />
                 </div>
                 
-                <button type="button" className="bg-indigo-500 text-white p-2 rounded-md font-bold w-full cursor-pointer" 
+                <button type="button" className="bg-black text-white p-2 rounded-md font-bold w-full cursor-pointer" 
                 onClick={handleSubmit}
                 >CREAR CATEGORIA</button>
                 
@@ -97,5 +101,6 @@ export default function NewCategory() {
         </div>
         
     </div>
+    </Fade>
   )
 }

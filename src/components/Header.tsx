@@ -2,6 +2,7 @@ import { Link, useLocation } from "react-router-dom"
 import { useAuth } from "../hooks/useAuth"
 import Cart from "./Cart"
 import MovilUserMenu from "./MovilUserMenu"
+import { useEffect, useState } from "react"
 
 
 
@@ -10,16 +11,23 @@ export default function Header() {
 
   const location = useLocation()
   const url = location.pathname
+  const [scroll,setScroll] = useState(0);
   
-  console.log(url);
+  const handleScroll=()=>{
+    setScroll(window.scrollY);
+  }
+
+  useEffect(()=>{
+    window.addEventListener('scroll', handleScroll);
+  },[scroll])
   
   const {user, logout} = useAuth('guest')  
 
   return (
-    <div className="bg-black text-center">
-        <img src="img/banner-distribuidora.jpg" className=" w-full h-full bg-white p-5" alt="" />
+    <div className="bg-white text-center relative ">
+        <img src=" img/banner-distribuidora.jpg" className={`fixed top-0 z-10 md:relative max-w-full px-10 ${scroll > 0 && ' md:-translate-y-full '  } mx-auto bg-white ease-in-out  duration-700  `} alt="" />
         
-        <nav className=" hidden text-white relative md:flex justify-around  m-auto p-5 items-center">
+        <nav className={` hidden ${scroll > 0 && '  fixed top-0'} text-white bg-black w-full md:flex justify-around  m-auto p-3 items-center  z-30  duration-700 ease-in-out `}>
           <Link to={'/'}>HOME</Link>
 
           <Link to={'/products'}>PRODUCTOS</Link>
@@ -37,17 +45,17 @@ export default function Header() {
           )}
 
           {user?.admin ? (
-              <Link className={`${(url == '/orders' || url == '/orders/completeOrders') && 'hidden'} bg-indigo-700 p-2 rounded-md`} to={'/orders'}>ORDENES</Link>
+              <Link className={`${(url == '/orders' || url == '/orders/completeOrders') && 'hidden'} bg-white text-black font-bold  p-2 rounded-md`} to={'/orders'}>ORDENES</Link>
           ) : (
               <Cart/>
           )}
 
         </nav>
-        <div className="  flex justify-between md:hidden items-center p-3">
+        <div className=" bg-black fixed top-10 w-full flex justify-between md:hidden items-center py-2  z-50 ">
           <div>
             <MovilUserMenu/>
           </div>
-
+          
           <div className=" mx-1">
           {user?.admin ? (
                 <Link className={`${(url == '/orders' || url == '/orders/completeOrders') && 'hidden'} bg-white font-bold p-2 rounded-md`} to={'/orders'}>ORDENES</Link>

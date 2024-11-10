@@ -2,7 +2,7 @@ import { useState } from "react";
 import { ContextProps, draftUser } from "../types";
 import { useAuth } from "../hooks/useAuth";
 import useProductos from "../hooks/useProductos";
-
+import { Fade } from "react-awesome-reveal";
 
 export default function Register() {
     const  {addUser} = useAuth('register') 
@@ -42,6 +42,7 @@ export default function Register() {
     }
 
   return (
+    <Fade>
     <div>
         {alert && (
             <p className={` text-center font-bold text-lg uppercase p-2 ${alert.error ? 'text-red-500' : ' text-blue-500'} ${alert.message== undefined ? ' hidden' : ' visible'} `}>{msjAlert}</p>
@@ -130,5 +131,6 @@ export default function Register() {
             </form>
         </div>
     </div>
+    </Fade>
   )
 }

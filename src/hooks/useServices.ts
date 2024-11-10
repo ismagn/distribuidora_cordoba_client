@@ -161,6 +161,8 @@ export const useServices = () => {
     }
 
     const completeOrder = async ( id : Order['id']) => { 
+        console.log(id);
+        
         updateProductQuantity(id)
         
         try {

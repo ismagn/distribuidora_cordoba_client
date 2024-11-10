@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useAuth } from "../hooks/useAuth";
 import { ContextProps, draftUserAuth } from "../types";
 import useProductos from "../hooks/useProductos";
-
+import { Fade } from "react-awesome-reveal";
 
 export default function Login() {
 
@@ -43,6 +43,7 @@ export default function Login() {
     }
 
   return (
+    <Fade>
     <div>
         {alert && (
             <p className={` text-center font-bold text-lg uppercase p-2 ${alert.error ? 'text-red-500' : ' text-blue-500'} ${alert.message== undefined ? ' hidden' : ' visible'} `}>{msjAlert}</p>
@@ -101,5 +102,6 @@ export default function Login() {
             </form>
         </div>
     </div>
+    </Fade>
   )
 }

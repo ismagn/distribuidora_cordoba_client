@@ -4,7 +4,7 @@ import { ContextProps, draftProduct } from "../types"
 import { useServices } from "../hooks/useServices"
 import useProductos from "../hooks/useProductos"
 import { useAuth } from "../hooks/useAuth"
-
+import { Fade } from "react-awesome-reveal";
 
 
 export default function NewProduct() {
@@ -143,6 +143,7 @@ export default function NewProduct() {
 
 
   return (
+    <Fade>
     <div className="p-3 md:p-10">
         <div className="text-center">
             <Link to={'/products'} className="p-2 text-sm  bg-black text-white font-bold rounded-md uppercase">Volver a productos</Link>
@@ -158,7 +159,7 @@ export default function NewProduct() {
                         htmlFor="Codigo"
                     >Codigo Producto:</label>
                     <input 
-                    defaultValue={id}
+                    defaultValue={id?.split('-')[0]}
                         readOnly={true}
                         id="Codigo"
                         type="text"
@@ -174,23 +175,27 @@ export default function NewProduct() {
                         className="text-xl font-bold text-gray-500"
                         htmlFor="name"
                     >Nombre Producto:</label>
-                    <input 
-                    defaultValue={product.name}
-                        readOnly={user?.admin ? false : true}
-                        id="name"
-                        type="text"
-                        className="mt-2 block w-full p-3 bg-gray-50 uppercase"
-                        placeholder="Nombre del Producto"
-                        name="name"
-                        onChange={handleOnChange}          
-                    />
+                    
+                    <div className=" md:flex justify-between">
+                        <input 
+                        defaultValue={product.name}
+                            readOnly={user?.admin ? false : true}
+                            id="name"
+                            type="text"
+                            className="mt-2 block w-full p-3 bg-gray-50 uppercase md:text-2xl"
+                            placeholder="Nombre del Producto"
+                            name="name"
+                            onChange={handleOnChange}          
+                        />
+                        <div >
+                            {!prev && product.image && <img className="w-full h-full" src={`${import.meta.env.VITE_API_URL}/${product.image}`} alt="" />}
+                        </div>
+                        <div >
+                            {prev && <img className="w-full h-full" src={`${prev}`} alt="" />}
+                        </div>
+                    </div>
                 </div>
-                <div >
-                    {!prev && product.image && <img className="w-2/4 h-1/4" src={`${import.meta.env.VITE_API_URL}/${product.image}`} alt="" />}
-                </div>
-                <div >
-                    {prev && <img className="w-2/4 h-1/4" src={`${prev}`} alt="" />}
-                </div>
+                
                 {user?.admin && (
                 <div className="mb-4">
                     <input type="file" name="image" className=" bg-black text-white p-2 rounded-md" id="image" onChange={handleOnChangeFilies}/>
@@ -242,7 +247,7 @@ export default function NewProduct() {
                         value={product.description}
                         name="description" 
                         id="description"
-                        className=" p-2 mt-2"
+                        className=" p-2 mt-2 min-h-44"
                         onChange={handleOnChange}
                         >
                     </textarea>
@@ -298,5 +303,6 @@ export default function NewProduct() {
         </div>
         
     </div>
+    </Fade>
   )
 }

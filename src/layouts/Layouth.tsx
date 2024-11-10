@@ -9,7 +9,7 @@ export default function Layouth() {
         <div>
             <Header/>
         </div>
-        <div>
+        <div className='mt-24 md:mt-10'>
             <Outlet/>
         </div>
         <div>

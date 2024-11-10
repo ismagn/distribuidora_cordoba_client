@@ -6,7 +6,7 @@ import { useEffect, useMemo, useState } from "react"
 import useProductos from "../hooks/useProductos"
 import { ContextProps, Product } from "../types"
 import DropdownMenu from "../components/DropdownMenu"
-
+import { Fade,Slide } from "react-awesome-reveal";
 
 export default function Products() {
     const {productos, isLoading, getProductById, getCategories} = useServices()
@@ -48,6 +48,8 @@ export default function Products() {
     
     
   return (
+    
+    <Fade>
       <div className='md:m-10 p-2 md:p-8 bg-white min-h-screen'>
         {isLoading && (<p>Cargando....</p>)}
 
@@ -83,17 +85,18 @@ export default function Products() {
             </div>
         </header>
         
+        <Slide cascade>
         {productsGrid ? (
             <body className=" md:my-5 grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4 text-center ">
                 {filter?.map(i=> (
                     <div key={i.id} className=" border-2 bg-slate-100 p-1 flex flex-col justify-between">
                         {i.image ? (
-                            <img className="w-full min-h-32 max-h-40 md:max-h-40 md:min-h-40" src={`${import.meta.env.VITE_API_URL}/${i.image}`} alt="" />
+                            <img className="w-full min-h-40 max-h-40 md:max-h-40 md:min-h-40" src={`${import.meta.env.VITE_API_URL}/${i.image}`} alt="" />
                         ) : (
-                            <p className=" bg-gray-700 min-h-32 md:min-h-40">p</p>
+                            <p className=" bg-gray-700 min-h-32 md:min-h-40">Sin imagen</p>
                         )}
                         <div className="my-2">
-                            <h2 className=" md:text-xl font-bold uppercase" >{i.name}</h2>
+                            <h2 className=" md:text-md font-bold uppercase" >{i.name}</h2>
                             
                         </div>
 
@@ -136,11 +139,11 @@ export default function Products() {
                         {filter?.map(i  => (
                             <tr key={i.id} className=" border-2 font-bold text-center ">
                                 {user?.admin && (
-                                    <td className="p-3 lg:text-lg text-gray-800  border">
-                                    {i.id}
+                                    <td className="p-3 text-xs text-gray-800  border">
+                                    {i.id.split('-')[0]}
                                 </td>
                                 )}
-                                <td className="p-3 lg:text-lg text-gray-800 border uppercase">
+                                <td className="p-3 text-xs text-gray-800 border uppercase">
                                     {i.name}
                                 </td>
                                 <td className="p-3 lg:text-lg text-gray-800  border">
@@ -150,7 +153,7 @@ export default function Products() {
                                 <td className="p-3 lg:text-lg text-gray-800 border ">
                                     <p>{i.cuantity}</p>
                                 </td>
-                                <td className="p-3 lg:text-lg text-gray-800 border">
+                                <td className="p-3 text-xs text-gray-800 border">
                                     <p>{i.category?.name}</p>
                                 </td>
                                 <td className="p-3 lg:text-lg max-w-20 text-gray-800  border hidden lg:visible">
@@ -173,9 +176,9 @@ export default function Products() {
                 </table>
         </body>
         )}
-
-        
+        </Slide>
 
     </div>
+    </Fade>
   )
 }
