@@ -96,7 +96,7 @@ export default function Products() {
                             <p className=" bg-gray-700 min-h-32 md:min-h-40">Sin imagen</p>
                         )}
                         <div className="my-2">
-                            <h2 className=" md:text-md font-bold uppercase" >{i.name}</h2>
+                            <h2 className=" text-sm md:text-md font-bold uppercase" >{i.name}</h2>
                             
                         </div>
 
@@ -112,7 +112,7 @@ export default function Products() {
                             <div>
                                 <p className=" text-xs">{i.category?.name}</p>    
                             </div>
-                            <button className="bg-black w-full py-2 text-white  uppercase rounded-md" type="button" onClick={()=>getProductById(i.id) }>{user?.admin ? "Editar" : "Ver Producto"}</button>
+                            <button className="bg-black w-full py-2 text-white  uppercase rounded-md text-sm md:text-base" type="button" onClick={()=>getProductById(i.id) }>{user?.admin ? "Editar" : "Ver Producto"}</button>
                             
                             
                         </div>

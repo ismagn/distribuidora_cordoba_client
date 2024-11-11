@@ -10,16 +10,16 @@ function Home() {
   return (
 
     <Fade>
-    <div className=" m-2 ">
-      <Zoom>
+    <div className=" m-2 p-3 ">
+      <Zoom triggerOnce>
       <header className="">
             <SlideHome/>
             
       </header>
       </Zoom>
       <section className="mx-2 mt-10 bg-white rounded-md p-2 md:p-8 shadow-lg">
-          <Slide  direction="right">
-          <p className=" text-gray-400 md:text-2xl font-bold text-center ">Comprometidos a brindarle la mejor solución, productos de la mejor calidad, precio adecuado, con mano de obra calificada</p>
+          <Slide  direction="right" triggerOnce>
+          <p className=" text-gray-400 text-sm md:text-2xl font-bold text-center ">Comprometidos a brindarle la mejor solución, productos de la mejor calidad, precio adecuado, con mano de obra calificada</p>
           </Slide>
             <Fade delay={1000}>
             <div  className=" text-center my-4 md:my-10 ">

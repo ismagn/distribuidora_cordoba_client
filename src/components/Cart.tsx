@@ -43,9 +43,9 @@ export default function Order() {
   return (
     <div className=" text-right">
       <Menu>
-        <MenuButton className="relative inline-flex items-center gap-2 rounded-md bg-gray-800 py-1.5 px-3 text-sm/6 font-semibold text-white shadow-inner  focus:outline-none data-[hover]:bg-gray-700 data-[open]:bg-gray-700 data-[focus]:outline-1 data-[focus]:outline-white">
+        <MenuButton className="relative inline-flex items-center gap-1 rounded-md bg-gray-800 py-1.5 px-3 text-sm/6 font-semibold text-white shadow-inner  focus:outline-none data-[hover]:bg-gray-700 data-[open]:bg-gray-700 data-[focus]:outline-1 data-[focus]:outline-white">
           Carrito
-          <ChevronDownIcon className="size-2 fill-white/60" />
+          <ChevronDownIcon className="size-4 fill-white/60" />
           {cart.length > 0 && (
             <p className={` animate-pulse absolute top-0 right-0 bg-white rounded-full w-4  text-red-700 text-md `}>{cart.length}</p>
           )}

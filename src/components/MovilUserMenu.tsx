@@ -21,7 +21,7 @@ export default function MovilUserMenu() {
         <MenuItems
           transition
           anchor="bottom end"
-          className="w-52 flex flex-col p-3 shadow-2xl gap-2 origin-top-right border border-black/35 rounded-md bg-white/85 text-sm/6 text-black transition duration-100 ease-out [--anchor-gap:var(--spacing-1)] focus:outline-none data-[closed]:scale-95 data-[closed]:opacity-0"
+          className="w-52 flex flex-col p-4 shadow-xl gap-1 origin-top-right border border-black/35 rounded-md bg-white/85 text-xs/6 text-black transition duration-100 ease-out [--anchor-gap:var(--spacing-1)] focus:outline-none data-[closed]:scale-95 data-[closed]:opacity-0"
         >
           <MenuItem>
             <Link to={'/'} className=' bg-black text-white p-2 rounded-md text-center font-bold cursor-pointer'>INICIO</Link>

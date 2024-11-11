@@ -2,7 +2,7 @@
 
 export default function Footer() {
   return (
-    <div className="  md:my-20 bg-black text-white grid grid-cols-1 md:grid-cols-2 p-10 items-center">
+    <div className="  md:mt-20 bg-black text-white grid grid-cols-1 md:grid-cols-2 p-10 items-center">
         <div>
             <h2 className=" font-bold text-lg">CONTACTANOS</h2>
 

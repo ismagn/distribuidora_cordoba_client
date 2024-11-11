@@ -176,19 +176,19 @@ export default function NewProduct() {
                         htmlFor="name"
                     >Nombre Producto:</label>
                     
-                    <div className=" md:flex justify-between">
+                    <div className=" md:flex justify-between gap-4">
                         <input 
                         defaultValue={product.name}
                             readOnly={user?.admin ? false : true}
                             id="name"
                             type="text"
-                            className="mt-2 block w-full p-3 bg-gray-50 uppercase md:text-2xl"
+                            className="mt-2 md:p-10  block w-full md:w-2/3 p-3 bg-gray-50 uppercase text-sm lg:text-xl md:h-52 font-bold"
                             placeholder="Nombre del Producto"
                             name="name"
                             onChange={handleOnChange}          
                         />
-                        <div >
-                            {!prev && product.image && <img className="w-full h-full" src={`${import.meta.env.VITE_API_URL}/${product.image}`} alt="" />}
+                        <div className=" mx-auto mt-5 md:mt-0 w-2/3 md:w-1/3">
+                            {!prev && product.image && <img className="" src={`${import.meta.env.VITE_API_URL}/${product.image}`} alt="" />}
                         </div>
                         <div >
                             {prev && <img className="w-full h-full" src={`${prev}`} alt="" />}
