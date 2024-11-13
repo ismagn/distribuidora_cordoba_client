@@ -9,7 +9,7 @@ export default function Layouth() {
         <div>
             <Header/>
         </div>
-        <div className='mt-24 md:mt-10'>
+        <div className='mt-24 md:mt-10 lg:px-52'>
             <Outlet/>
         </div>
         <div>

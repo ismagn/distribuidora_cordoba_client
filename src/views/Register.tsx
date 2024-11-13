@@ -43,16 +43,16 @@ export default function Register() {
 
   return (
     <Fade>
-    <div>
+    <div className=" mt-10 md:mt-0">
         {alert && (
             <p className={` text-center font-bold text-lg uppercase p-2 ${alert.error ? 'text-red-500' : ' text-blue-500'} ${alert.message== undefined ? ' hidden' : ' visible'} `}>{msjAlert}</p>
         )}
         <div>
             <form
-                className=" p-2 md:p-14"
+                className=" px-2"
                 >
                 <h1 className=" text-2xl uppercase font-bold text-center mb-4">registrarse</h1>
-                <div className="mb-4">
+                <div className="mb-3">
                     <label
                         className="text-xl font-bold text-gray-500"
                         htmlFor="name"
@@ -66,7 +66,7 @@ export default function Register() {
                         onChange={handleOnChange}
                     />
                 </div>
-                <div className="mb-4">
+                <div className="mb-3">
                     <label
                         className="text-xl font-bold text-gray-500"
                         htmlFor="email"
@@ -80,7 +80,7 @@ export default function Register() {
                         onChange={handleOnChange}
                     />
                 </div>
-                <div className="mb-4">
+                <div className="mb-3">
                     <label
                         className="text-xl font-bold text-gray-500"
                         htmlFor="password"
@@ -94,7 +94,7 @@ export default function Register() {
                         onChange={handleOnChange}
                     />
                 </div>
-                <div className="mb-4">
+                <div className="mb-3">
                     <label
                         className="text-xl font-bold text-gray-500"
                         htmlFor="phone"
@@ -109,7 +109,7 @@ export default function Register() {
                     />
                 </div>
 
-                <div className="mb-4 flex flex-col">
+                <div className="mb-3 flex flex-col">
                     <label
                         className="text-xl font-bold text-gray-500"
                         htmlFor="adress"
@@ -123,7 +123,7 @@ export default function Register() {
                     </textarea>
                 </div>
                 
-                <button className="mt-5 w-full bg-black p-2 text-white font-bold text-lg cursor-pointer rounded" 
+                <button className="mt-2 w-full bg-black p-2 text-white font-bold text-lg cursor-pointer rounded" 
                 type="button"
                 onClick={handleSubmit}
                 >REGISTRARSE</button>

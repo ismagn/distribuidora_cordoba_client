@@ -54,18 +54,18 @@ export default function Order() {
           <MenuItems
           transition
           anchor="bottom end"
-          className="w-5/6 md:w-1/3 h-3/5 flex flex-col p-3 shadow-2xl gap-2 origin-top-right border border-white/5 bg-white/90 text-sm/6 text-black transition duration-100 ease-out [--anchor-gap:var(--spacing-1)] focus:outline-none data-[closed]:scale-95 data-[closed]:opacity-0"
+          className="w-5/6 md:w-4/5 lg:w-1/3 h-3/5 flex flex-col p-3 shadow-2xl gap-2 origin-top-right border border-white/5 bg-white/90 text-sm/6 text-black transition duration-100 ease-out [--anchor-gap:var(--spacing-1)] focus:outline-none data-[closed]:scale-95 data-[closed]:opacity-0"
           >
             <h2 className=' text-xl font-bold text-center'>ORDEN</h2>
           {cart?.map(i=> (
           <div key={i.id}>
           <div className='bg-black p-2 flex gap-3'>
-            <div className=' bg-white max-w-36 md:w-1/3 p-2 flex items-center '>
+            <div className=' bg-white min-w-36 max-w-36 md:w-1/3 p-2 flex items-center '>
               <img className="" src={`${import.meta.env.VITE_API_URL}/${i.image}`} alt="" />
             </div>
             <div className=' w-auto '>
               <p className=' text-white  text-xs'>ID: {i.id}</p>
-              <p className=' text-white font-bold  md:text-lg'>{i.name}</p>
+              <p className=' text-white font-bold  md:text-sm'>{i.name}</p>
               <p className=' text-white'>Precio: <span className=' text-green-400 font-bold'>$ {i.total.toFixed(2)} MXN</span> </p>
               <div className='text-white'>
                 <label className=''  htmlFor="">Cantidad</label>

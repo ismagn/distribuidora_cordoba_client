@@ -44,13 +44,13 @@ export default function Login() {
 
   return (
     <Fade>
-    <div>
+    <div className="">
         {alert && (
             <p className={` text-center font-bold text-lg uppercase p-2 ${alert.error ? 'text-red-500' : ' text-blue-500'} ${alert.message== undefined ? ' hidden' : ' visible'} `}>{msjAlert}</p>
         )}
         <div>
             <form
-                className="p-2 md:p-14"
+                className="px-2 py-20  md:p-14"
                 >
                 
                 <h1 className=" text-2xl uppercase font-bold text-center mb-4">iniciar sesion</h1>

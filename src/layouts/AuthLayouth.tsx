@@ -8,7 +8,7 @@ export default function AuthLayouth() {
         <div>
             <Header/>
         </div>
-        <div>
+        <div className='mt-24 md:mt-0 px-0 lg:px-80'>
             <Outlet/>
         </div>
     </div>
