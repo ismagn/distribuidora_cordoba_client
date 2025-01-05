@@ -86,7 +86,6 @@ export default function NewCategory() {
                         id="name"
                         type="text"
                         className="mt-2 block w-full p-3 bg-gray-50 uppercase"
-                        placeholder="Nombre del Producto"
                         name="name"
                         onChange={handleOnChange}
                     />

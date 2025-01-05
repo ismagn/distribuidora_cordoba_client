@@ -7,34 +7,32 @@ export default function SlideHome() {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 1,
+    slidesToShow: 3,
     slidesToScroll: 1,
     adaptiveHeight: true,
     autoplay: true,
     autoplaySpeed: 5000,
     centerMode: false,
-    pauseOnHover: true
+    pauseOnHover: true,
+    focusOnSelect: true
   };
   return (
     <div className=" md:py-10 md:px-20 bg-white m-2  ">
         <Slider {...settings} >
       <div className="">
-        <img className=" w-full h-52 md:h-96" src="img/distribuidora_vista1.jpg" alt="" />
+        <img className=" w-full h-52 md:h-96 pr-2" src="img/kit-1.jpg" alt="" />
       </div>
       <div className="  ">
-      <img className=" w-full h-52 md:h-96" src="img/distribuidora_vista2.jpg" alt=""  />
+      <img className=" w-full h-52 md:h-96 pr-2" src="img/kit-2.jpg" alt=""  />
       </div>
       <div className=" ">
-      <img className=" w-full  h-52 md:h-96" src="img/distribuidora_vista3.jpg" alt="" />
+      <img className=" w-full  h-52 md:h-96 pr-2" src="img/kit-3.jpg" alt="" />
       </div>
       <div>
-      <img className=" w-full h-52 md:h-96" src="img/distribuidora_vista4.jpg" alt="" />
+      <img className=" w-full h-52 md:h-96 pr-2" src="img/sabanas.jpg" alt="" />
       </div>
       <div>
-      <img className=" w-full h-52 md:h-96" src="img/distribuidora_vista5.jpg" alt="" />
-      </div>
-      <div className=" "> 
-        <img className=" w-full h-52 md:h-96" src="img/vista_interior1.jpg" alt="" />
+      <img className=" w-full h-52 md:h-96 pr-2" src="img/cenicero-1.jpg" alt="" />
       </div>
     </Slider>
     

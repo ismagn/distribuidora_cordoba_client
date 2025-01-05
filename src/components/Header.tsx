@@ -25,7 +25,7 @@ export default function Header() {
 
   return (
     <div className=" text-center relative ">
-        <img src=" img/banner_distribuidora_cordoba_negro.jpg" className={`fixed top-0 z-10 md:relative w-screen md:h-28 px-10 lg:px-96 ${scroll > 0 && ' block -translate-y-full  '  } mx-auto bg-black ease-in-out  duration-300  `} alt="" />
+        <img src=" /img/banner_smoke_lab.jpg" className={`fixed top-0 z-10 md:relative w-screen h-10 md:h-24 px-10 lg:px-96 ${scroll > 0 && ' block -translate-y-full  '  } mx-auto bg-white ease-in-out  duration-300  `} alt="" />
         
         <nav className={` border-t-2 hidden ${scroll > 0 && '  fixed top-0'} text-white bg-black w-full lg:px-52 md:flex justify-between m-auto p-3 items-center  z-30  duration-700 ease-in-out `}>
           <div className=" font-bold  bg-slate-200 p-1 rounded-md text-black cursor-pointer ">

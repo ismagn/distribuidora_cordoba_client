@@ -25,6 +25,8 @@ export default function Products() {
     useEffect(()=>{
         mutateUser()
         getCategories()
+        console.log(productos);
+        
     },[])
 
     useEffect(()=>{
@@ -50,13 +52,13 @@ export default function Products() {
   return (
     
     <Fade>
-      <div className='md:m-10 p-2 md:p-8 bg-white min-h-screen'>
+      <div className='md:mx-10 px-2 md:px-8  min-h-screen '>
         {isLoading && (<p>Cargando....</p>)}
 
         <header className="  font-bold items-center">
             <div className=" flex justify-between">
                 <div >
-                    <h2 className="text-4xl text-gray-600 font-black">Productos</h2>
+                    <h2 className="text-3xl text-gray-600 font-black">Productos</h2>
                 </div>
 
                 {user?.admin && (
@@ -89,11 +91,11 @@ export default function Products() {
         {productsGrid ? (
             <body className=" md:my-5 grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4 text-center ">
                 {filter?.map(i=> (
-                    <div key={i.id} className=" border-2 bg-slate-100 p-1 flex flex-col justify-between">
+                    <div key={i.id} className=" border-2 bg-white p-1 md:p-4 flex flex-col justify-between">
                         {i.image ? (
-                            <img className="w-full min-h-40 max-h-40 md:max-h-40 md:min-h-40" src={`${import.meta.env.VITE_API_URL}/${i.image}`} alt="" />
+                            <img className="w-full min-h-40 max-h-40 md:max-h-60 md:min-h-60" src={`${import.meta.env.VITE_API_URL}/${i.image}`} alt="" />
                         ) : (
-                            <p className=" bg-gray-700 min-h-32 md:min-h-40">Sin imagen</p>
+                            <p className=" bg-gray-700 min-h-40 md:min-h-60">Sin imagen</p>
                         )}
                         <div className="my-2">
                             <h2 className=" text-sm md:text-md font-bold uppercase" >{i.name}</h2>
@@ -134,7 +136,7 @@ export default function Products() {
                             <th className="p-2">Acciones</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className="">
                         
                         {filter?.map(i  => (
                             <tr key={i.id} className=" border-2 font-bold text-center ">
@@ -167,7 +169,7 @@ export default function Products() {
                                 </td>
                                 ) : (
                                 <td className="p-3 text-xs text-gray-800 flex flex-col gap-2 ">
-                                    <button className="bg-indigo-500 text-white p-2 uppercase rounded-md" type="button" >Añadir al carrito</button>
+                                    <button className="bg-indigo-500 text-white p-1 uppercase rounded-md" type="button" >Añadir al carrito</button>
                                 </td>
                                 )}
                             </tr> 
